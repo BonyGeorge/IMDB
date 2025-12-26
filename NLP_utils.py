@@ -14,7 +14,7 @@ class NLP_utils:
         return re.split(r'\W+', text)
 
     def remove_stopwords(self, tokenized_list):
-        return [word for word in tokenized_list if word not in self.stopwords]
+        return [word for word in tokenized_list if word not in self.stopwords and word != 'br']
 
     def stemming(self, tokenized_list):
         return [self.ps.stem(word) for word in tokenized_list]
